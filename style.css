@@ -1,0 +1,75 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: aqua;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    margin-top: 1em;
+}
+
+.message-container {
+    text-align: center;
+    margin: 2em;
+    font-size: 2rem;
+}
+
+.something {
+    text-align: center;
+    margin: 2em;
+}
+
+.square {
+    border: 5px solid pink;
+    height: 33.33%;
+    width: 33.33%;
+    font-size: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameboard {
+    border: 5px solid pink;
+    margin: 3em auto;
+    width: calc(200px + 20vw);
+    height: calc(200px + 20vw);
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.controls-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.control-button {
+    font-size: 1.5rem;
+    background-color: pink;
+    border-radius: 15px;
+    border: 5px solid pink;
+    padding: .25em;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+.controls-container input {
+    width: 250px;
+    background-color: pink;
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+    padding-left: 10px;
+    border: 5px solid pink;
+}
