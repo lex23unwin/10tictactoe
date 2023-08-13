@@ -23,11 +23,6 @@ body {
     font-size: 2rem;
 }
 
-.something {
-    text-align: center;
-    margin: 2em;
-}
-
 .square {
     border: 5px solid pink;
     height: 33.33%;
