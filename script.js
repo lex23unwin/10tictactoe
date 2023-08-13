@@ -89,6 +89,18 @@ const gameController = (() => {
         round += 1;
     };
 
+    const checkWinner = () => {
+        if (gameBoard.getSquare(0) === gameBoard.getSquare(1) && gameBoard.getSquare(1) === gameBoard.getSquare(2) && gameBoard.getSquare(0) !== '') {return true} 
+        else if (gameBoard.getSquare(3) === gameBoard.getSquare(4) && gameBoard.getSquare(4) === gameBoard.getSquare(5) && gameBoard.getSquare(3) !== '') {return true} 
+        else if (gameBoard.getSquare(6) === gameBoard.getSquare(7) && gameBoard.getSquare(7) === gameBoard.getSquare(8) && gameBoard.getSquare(6) !== '') {return true} 
+        else if (gameBoard.getSquare(0) === gameBoard.getSquare(3) && gameBoard.getSquare(3) === gameBoard.getSquare(6) && gameBoard.getSquare(0) !== '') {return true} 
+        else if (gameBoard.getSquare(1) === gameBoard.getSquare(4) && gameBoard.getSquare(4) === gameBoard.getSquare(7) && gameBoard.getSquare(1) !== '') {return true} 
+        else if (gameBoard.getSquare(2) === gameBoard.getSquare(5) && gameBoard.getSquare(5) === gameBoard.getSquare(8) && gameBoard.getSquare(2) !== '') {return true} 
+        else if (gameBoard.getSquare(0) === gameBoard.getSquare(4) && gameBoard.getSquare(4) === gameBoard.getSquare(8) && gameBoard.getSquare(0) !== '') {return true} 
+        else if (gameBoard.getSquare(2) === gameBoard.getSquare(4) && gameBoard.getSquare(4) === gameBoard.getSquare(6) && gameBoard.getSquare(2) !== '') {return true} 
+        else { return false; }
+    };
+
     return { getRound, getIsOver, reset, playRound, getCurrentPlayerSign, getCurrentPlayerName };
 
 })();
