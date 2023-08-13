@@ -1,3 +1,2 @@
-# 10tictactoe
 Tic Tac Toe game with HTML/CSS/JS
-Using objects, classes, factory functions and other OOP stuff
+Using factory functions, module/IIFEs and other OOP stuff
