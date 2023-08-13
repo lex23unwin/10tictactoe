@@ -13,6 +13,8 @@ const gameBoard = (() => {
 
     const setSquare = (index, symbol) => {
         board[index] = symbol;
+        displayController.setMessageElement(`${gameController.getCurrentPlayerName()} has chosen
+        spot ${index}`);
     };
 
     const getSquare = (index) => {
@@ -27,7 +29,7 @@ const gameBoard = (() => {
     };
 
     return { setSquare, getSquare, reset };
-})(); 
+})();
 
 const gameController = (() => {
 
@@ -78,15 +80,18 @@ const gameController = (() => {
         {
             isOver = true;
             round += 1;
+            displayController.setMessageElement(`${getCurrentPlayerName()} wins! Play again?`);
             return;
         }
         if (round === 9)
         {
             isOver = true;
-
+            console.log(round)
+            displayController.setMessageElement("Draw! Play again?")
             return;
         }
         round += 1;
+        console.log(round);
     };
 
     const checkWinner = () => {
@@ -104,7 +109,6 @@ const gameController = (() => {
     return { getRound, getIsOver, reset, playRound, getCurrentPlayerSign, getCurrentPlayerName };
 
 })();
-
 
 const displayController = (() => {
 
@@ -136,4 +140,3 @@ const displayController = (() => {
     return { setMessageElement };
 
 })();
-
