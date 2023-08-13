@@ -104,3 +104,36 @@ const gameController = (() => {
     return { getRound, getIsOver, reset, playRound, getCurrentPlayerSign, getCurrentPlayerName };
 
 })();
+
+
+const displayController = (() => {
+
+    const allSquares = document.querySelectorAll(".square")
+    allSquares.forEach( (eachSquare) => {
+        eachSquare.addEventListener("click", (e) => {
+            if (e.target.textContent === "" && (!gameController.getIsOver()))
+            {
+                gameController.playRound(e.target.id);
+                e.target.textContent = gameController.getCurrentPlayerSign();
+            }
+        })
+    });
+
+    const restartButton = document.querySelector("#restart-button")
+    restartButton.addEventListener("click", () => {
+        gameBoard.reset();
+        gameController.reset();
+        allSquares.forEach( (eachSquare) => {
+            eachSquare.textContent = "";
+        })
+    });
+
+    const messageContainer = document.querySelector(".message-container")
+    const setMessageElement = (message) => {
+        messageContainer.textContent = message;
+    };
+
+    return { setMessageElement };
+
+})();
+
